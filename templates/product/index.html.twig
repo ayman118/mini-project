@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProductController!{% endblock %}
+{% block body %}
+<h1>Liste des produits</h1>
+<ul>
+{% for product in products %}
+<li>
+{{ product.name }} - {{ product.price }} € <a href="{{ path('edit_product', { id:
+product. id }) }}">Modifier</a>
+<a href="{{ path('delete_product', { id: produc t.id }) }}" onclick="return
+confirm('Êtes-vous sûr ?');">Su pprimer</a>
+</li>
+{% endfor %}
+</ul>
